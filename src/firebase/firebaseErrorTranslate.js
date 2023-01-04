@@ -22,7 +22,9 @@ export function translateMessage(message) {
         case "auth/too-many-requests":
             newMessage = "Çok fazla istek gönderdiniz. Lütfen daha sonra tekrar deneyiniz."
             break;
-    
+        case "auth/network-request-failed":
+            newMessage = "İnternet bağlantınızı kontrol ediniz."
+            break;
         default:
             newMessage = message
             break;

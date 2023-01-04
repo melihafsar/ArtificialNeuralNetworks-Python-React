@@ -1,16 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import { logout, auth } from '../firebase/firebaseConfig';
 import { useAuth } from '../context/AuthContext';
 import logo from '../static/TeknolojiF.png';
-import axios from 'axios';
 
 const sideBarInfo = [
-    { link: "/project-board", i_className: "bx bx-grid-alt", categoryName: "Planlama" },
-    { link: "/work-day", i_className: "bx bx-briefcase", categoryName: "Çalışma Günleri" },
-    { link: "/contact", i_className: "bx bx-envelope", categoryName: "İletişim" },
-    { link: "/my-notes", i_className: "bx bx-note", categoryName: "Notlarım" },
-    { link: "/classroom-info", i_className: "bx bx-folder", categoryName: "Derslik Bilgileri" },
+    { link: "/homepage", i_className: "bx bx-grid-alt", categoryName: "Planlama" },
+    { link: "/contacts", i_className: "bx bx-envelope", categoryName: "İletişim" },
     { link: "/profile", i_className: "bx bx-cog", categoryName: "Kullanıcı Ayarları" },
     { link: "https://takvim.marmara.edu.tr/", i_className: "bx bx-calendar", categoryName: "Akademik Takvim" },
     { link: "https://bys.marmara.edu.tr/v2", i_className: "bx bx-data", categoryName: "BYS Sistemi" },
@@ -18,7 +14,7 @@ const sideBarInfo = [
 
 function SideBar() {
     const [sideBar, setSideBar] = useState(true);
-    const {setUser, setUserId, userId } = useAuth();
+    const {setUser} = useAuth();
     const [userInfo, setUserInfo] = useState({});
 
     const getUserInfo = () => {
@@ -27,30 +23,18 @@ function SideBar() {
             user.providerData.forEach((profile) => {
             sessionStorage.setItem('userMail', profile.email);
             sessionStorage.setItem('lastSignIn', user.metadata.lastSignInTime);
+            //setUserInfo(profile);
           });
         }
       }
 
-    const handleGetUserInfo = async () => {
-        if( userInfo.name === undefined || userInfo.name === null ) {
-            const text = `http://localhost:3000/person_info/personInfo/:${userId}`;
-            await axios.get(text)
-                .then(response => {
-                    setUserInfo(response.data);
-                })
-                .catch(error => { console.error(error); return Promise.reject(error); });
-        }    
-    }
-        getUserInfo();
-    useEffect(() => {
-    }, [sideBar, userId])
+    getUserInfo();
 
     const navigate = useNavigate();
 
     async function handleLogOut() {
         await logout();
         setUser(false);
-        setUserId(0);
         sessionStorage.clear();
         navigate('/')
     }
@@ -65,7 +49,6 @@ function SideBar() {
                     }
                     <i onClick={() => {
                         setSideBar(!sideBar);
-                        handleGetUserInfo();
                     }} className={sideBar ? "bx bx-menu" : "bx bx-menu-alt-right "} id="btn"></i>
                 </div>
                 <ul className="nav-list">
@@ -75,7 +58,7 @@ function SideBar() {
                                 <div key={item}>
                                     <li >
                                         {
-                                            item < 5 ?
+                                            item < 3 ?
                                                 (
                                                     <Link to={info.link}>
                                                         <i className={info.i_className}></i>
@@ -98,7 +81,7 @@ function SideBar() {
                     <li className="profile">
                         <div className="profile-details">
                             <div className="name_job">
-                                <div className="name">{userInfo.name} {userInfo.surname}</div>
+                                <div className="name">{userInfo.email} {userInfo.surname}</div>
                                 <div className="job">{ userInfo.degree }</div>
                             </div>
                         </div>

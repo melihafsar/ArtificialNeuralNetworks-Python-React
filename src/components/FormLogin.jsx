@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { login } from '../firebase/firebaseConfig';
 import { useAuth } from '../context/AuthContext';
-import axios from 'axios';
+
 
 function FormLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { setUser, setUserId } = useAuth();
+  const { setUser } = useAuth();
   const [passwordShow, setPasswordShow] = useState(false);
 
   const togglePassword = () => {
@@ -16,26 +16,17 @@ function FormLogin() {
 
   const navigate = useNavigate();
 
-  async function getUser(email) {
-    const text = `http://localhost:3000/person_info/email/:${email}`;
-    await axios.get(text)
-      .then(response => {
-        setUserId(response.data.person_id);
-      })
-      .catch(error => { console.error(error); return Promise.reject(error); });
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     e.preventDefault();
     const userInfo = await login(email, password);
-    getUser(userInfo.email);
+
     setEmail('');
     setPassword('');
 
     if (userInfo) {
       setUser(true);
-      navigate('/project-board');
+      navigate('/homepage');
     }
   }
   return (

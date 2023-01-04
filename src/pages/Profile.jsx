@@ -5,8 +5,6 @@ import userImage from '../static/user.png';
 import { successAlert, errorAlert } from '../helpers/AlertHelper';
 import { logout, auth } from '../firebase/firebaseConfig';
 import { useNavigate } from "react-router-dom";
-
-import axios from 'axios';
 import { updateNewPassword } from '../firebase/firebaseConfig';
 
 function Profile() {
@@ -27,30 +25,30 @@ function Profile() {
     form_data.append('room_no', room_no);
     form_data.append('degree', degree);
 
-    try {
-      await axios.put(`http://localhost:3000/person_info/update/:${userId}`, form_data,
-        {
-          headers: form_data.getHeaders ? form_data.getHeaders() : { 'Content-Type': 'application/json' }
-        });
-      successAlert("Bilgileriniz başarıyla güncellendi");
-    } catch (error) {
-      console.error(error);
-      errorAlert("Bilgileriniz güncellenemedi");
-      return Promise.reject(error);
-    }
+    // try {
+    //   await axios.put(`http://localhost:3000/person_info/update/:${userId}`, form_data,
+    //     {
+    //       headers: form_data.getHeaders ? form_data.getHeaders() : { 'Content-Type': 'application/json' }
+    //     });
+    //   successAlert("Bilgileriniz başarıyla güncellendi");
+    // } catch (error) {
+    //   console.error(error);
+    //   errorAlert("Bilgileriniz güncellenemedi");
+    //   return Promise.reject(error);
+    // }
   }
 
   const handleGetUserInfo = async () => {
     if (userInfo.name === undefined || userInfo.name === null) {
-      const text = `http://localhost:3000/person_info/personID/:${userId}`;
-      await axios.get(text)
-        .then(response => {
-          setUserInfo(response.data);
-          setDegree(response.data.degree);
-          setPhone(response.data.phone);
-          setRoom_no(response.data.room_no);
-        })
-        .catch(error => { console.error(error); return Promise.reject(error); });
+      //const text = `http://localhost:3000/person_info/personID/:${userId}`;
+      // await axios.get(text)
+      //   .then(response => {
+      //     setUserInfo(response.data);
+      //     setDegree(response.data.degree);
+      //     setPhone(response.data.phone);
+      //     setRoom_no(response.data.room_no);
+      //   })
+      //   .catch(error => { console.error(error); return Promise.reject(error); });
     }
   }
 
