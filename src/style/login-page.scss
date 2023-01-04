@@ -1,0 +1,139 @@
+//form-login-register
+.form-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin-top: 5%;
+
+    .container {
+        flex-direction: row;
+        margin-bottom: 5px;
+    }
+}
+
+
+
+.form-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../static/loginPageImage.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: var(--gray);
+    background-blend-mode: multiply;
+    background-color: rgb(0, 0, 0, 0.55);
+
+    .logo {
+        position: absolute;
+        top: 10%;
+        width: 100%;
+        text-align: center;
+        font-size: 18px; 
+        img {
+            height: 140px;
+            width: auto;
+        }
+    }
+    .login {
+        height: 350px;
+    }
+
+    .register {
+        height: 450px;
+    }
+
+    .form {
+        margin-top: 10%;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.50);
+        border-radius: 4px;
+        width: 300px;
+
+        padding: 30px 50px 40px;
+
+        .form-group-label {
+            top: 10px;
+            font-size: 0.75rem;
+        }
+
+        &-title {
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--secondary-bg);
+            z-index: 5;
+        }
+
+        &-group {
+            position: relative;
+            z-index: 10;
+            display: flex;
+
+            &-label {
+                position: absolute;
+                z-index: 150;
+                color: var(--gray);
+                font-size: 0.9rem;
+                top: 30px;
+                left: 18px;
+                transition: all 300ms ease-in;
+            }
+
+            &-input {
+                width: 100%;
+                position: relative;
+                z-index: 100;
+                background: rgba(255, 255, 255, 0.70);;
+                margin-bottom: 20px;
+                border-radius: 4px;
+                border: none;
+                opacity: 1;
+                font-size: 1rem;
+                color: var(--secondary-bg);
+                line-height: 50px;
+                padding: 12px 15px 0;
+            }
+        }
+
+        &-sign-in {
+            margin: 0px 0 10px;
+            padding: 16px;
+            color: var(--secondary-bg);
+            background-color: rgba(0, 0, 0, 0.50);;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        &-secondary-cta {
+            position: relative;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+
+            &-text {
+                opacity: 1;
+                font-size: 0.9rem;
+                color: var(--gray);
+                text-decoration: none;
+
+                &--need-help {
+                    transition: all 0.3s ease-in;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
