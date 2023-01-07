@@ -1,0 +1,101 @@
+@media screen and (max-width: 1920px) {
+    .form-title {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+    .form-layout { 
+        margin-top: 10%;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .form-title {
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+    .form-layout { 
+        margin-top: 10%;
+    }
+}
+    
+
+
+@media screen and (max-width: 1366px) {
+    .form-title {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    .form-layout { 
+        margin-top: 11%;
+    }
+
+
+    .form-section .logo img {
+        height: 90px;
+        width: auto;
+        
+    }
+
+
+    
+}
+
+@media screen and (max-width: 1040px) {
+    .form-title {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+    .form-layout { 
+        margin-top: 10%;
+    }
+    .form-section .logo img {
+        height: 90px;
+        width: auto;
+        
+    }
+}
+
+@media screen and (max-width: 767px) {
+}
+
+@media screen and (max-width: 655px) {
+  
+}
+
+@media screen and (max-width: 450px) {
+    .form {
+
+        &-title {
+          
+            font-size: 15px;
+            font-weight: 400;
+        }
+    }
+
+    .form-section .logo img {
+        height: 100px;
+        width: auto;
+        
+    }
+}
+
+@media screen and (max-width: 395px) {
+    .form {
+
+        &-title {
+          
+            font-size: 12px;
+            font-weight: 400;
+        }
+    }
+
+    .form-section .logo img {
+        height: 60px;
+        width: auto;
+        
+    }
+    .form-layout { 
+        margin-top: 30%;
+    }
+  
+}

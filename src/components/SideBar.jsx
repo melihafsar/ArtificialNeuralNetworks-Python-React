@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { logout, auth } from '../firebase/firebaseConfig';
 import { useAuth } from '../context/AuthContext';
 import logo from '../static/TeknolojiF.png';
+import { useEffect } from 'react';
 
 const sideBarInfo = [
     { link: "/homepage", i_className: "bx bx-grid-alt", categoryName: "Planlama" },
@@ -14,21 +15,19 @@ const sideBarInfo = [
 
 function SideBar() {
     const [sideBar, setSideBar] = useState(true);
-    const {setUser} = useAuth();
-    const [userInfo, setUserInfo] = useState({});
+    const {setUser, setUserInfo, userInfo} = useAuth();
 
     const getUserInfo = () => {
         const user = auth.currentUser;
         if (user !== null) {
-            user.providerData.forEach((profile) => {
-            sessionStorage.setItem('userMail', profile.email);
-            sessionStorage.setItem('lastSignIn', user.metadata.lastSignInTime);
-            //setUserInfo(profile);
-          });
+            setUserInfo(user.providerData[0]);
         }
       }
 
-    getUserInfo();
+    useEffect(() => {
+        getUserInfo();
+    }, [])
+
 
     const navigate = useNavigate();
 
@@ -81,8 +80,7 @@ function SideBar() {
                     <li className="profile">
                         <div className="profile-details">
                             <div className="name_job">
-                                <div className="name">{userInfo.email} {userInfo.surname}</div>
-                                <div className="job">{ userInfo.degree }</div>
+                                <div className="name">{userInfo.displayName}</div>
                             </div>
                         </div>
                         <i className="bx bx-log-out" id="log_out" onClick={handleLogOut}></i>

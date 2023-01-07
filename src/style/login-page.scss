@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content:center;
     align-items: center;
-    margin-top: 5%;
+    margin-top: 20%;
 
     .container {
         flex-direction: row;
@@ -46,7 +46,7 @@
     }
 
     .register {
-        height: 450px;
+        height: auto;
     }
 
     .form {
@@ -57,7 +57,7 @@
         border-radius: 4px;
         width: 300px;
 
-        padding: 30px 50px 40px;
+        padding: 15px 25px 15px;
 
         .form-group-label {
             top: 10px;
@@ -65,8 +65,9 @@
         }
 
         &-title {
+            text-decoration: none;
             margin-bottom: 10px;
-            font-size: 2.2rem;
+            //font-size: 2.2rem;
             font-weight: 600;
             color: var(--secondary-bg);
             z-index: 5;

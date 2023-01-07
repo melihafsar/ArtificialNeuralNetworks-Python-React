@@ -6,6 +6,7 @@ import Page404 from '../pages/Page404';
 import HomePage from '../pages/HomePage';
 import PrivateRoute from './PrivateRoute';
 import Contacts from '../pages/Contacts';
+import RegisterPage from '../pages/RegisterPage';
 
 function MainRoute() {
     return (
@@ -13,6 +14,7 @@ function MainRoute() {
             <Routes>
                 <Route path='/' element={<LoginPage />} />
                 <Route path='/login' element={<LoginPage />} />
+                <Route path='/register' element={<RegisterPage />} />
                 <Route path='/homepage' element={<PrivateRoute><HomePage/></PrivateRoute>} />
                 <Route path='/contacts' element={<PrivateRoute><Contacts/></PrivateRoute>} />
                 <Route path='/profile' element={<PrivateRoute><Profile/></PrivateRoute>} />

@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged, updatePassword } from "firebase/auth";
-import { successAlert, errorAlert } from "../helpers/AlertHelper";
+import { getAuth, signInWithEmailAndPassword, signOut, updatePassword, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { successAlert, errorAlert, warningAlert } from "../helpers/AlertHelper";
 import { translateMessage } from "./firebaseErrorTranslate";
 // Your web app's Firebase configuration
 
@@ -42,6 +42,25 @@ export const login = async (email, password) => {
     }
 }
 
+
+export const register = async (email, password, name, surname) => {
+    try {
+        const { user } = await createUserWithEmailAndPassword(auth, email, password);
+            updateProfile(auth.currentUser, {
+                displayName: `${name} ${surname}`
+            }).then(() => {
+                successAlert("Profil kaydı başarıyla oluşturuldu.")
+            }).catch((error) => {
+                warningAlert("Giriş bilgileriniz kaydedildi. Ancak isim soyisim bilginiz kaydedilemedi.");
+            });
+            return user;
+    } catch (error) {
+        console.log(error.code);
+        errorAlert(translateMessage(error.code));
+        return false
+    }
+}
+
 export const logout = async () => {
     await signOut(auth).then(() => {
         successAlert("Profilinizden çıkış başarılı.")
@@ -51,13 +70,13 @@ export const logout = async () => {
     });
 }
 
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        console.log("logged in.");
-    } else {
-        console.log("logged out");
-    }
-});
+// onAuthStateChanged(auth, (user) => {
+//     if (user) {
+//         console.log("logged in.");
+//     } else {
+//         console.log("logged out");
+//     }
+// });
 
 export const getUserInfo = () => {
     const user = auth.currentUser;
