@@ -27,7 +27,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-
 export const auth = getAuth();
 export const login = async (email, password) => {
     try {
@@ -41,7 +40,6 @@ export const login = async (email, password) => {
         return false;
     }
 }
-
 
 export const register = async (email, password, name, surname) => {
     try {
