@@ -23,7 +23,9 @@ yolov7_detector = yolov7("models/best.onnx",
                          conf_thres=0.5,
                          iou_thres=0.5)
 
-firebaseApp = firebase_admin.initialize_app()
+cred = credentials.Certificate("apiKey.json")
+
+firebaseApp = firebase_admin.initialize_app(cred)
 
 app = FastAPI(
     docs_url="/docs",
