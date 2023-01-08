@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword, signOut, updatePassword, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { signInWithEmailAndPassword, signOut, updatePassword, createUserWithEmailAndPassword, updateProfile, browserLocalPersistence, initializeAuth } from "firebase/auth";
 import { successAlert, errorAlert, warningAlert } from "../helpers/AlertHelper";
 import { translateMessage } from "./firebaseErrorTranslate";
 // Your web app's Firebase configuration
@@ -26,8 +26,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+export const auth = initializeAuth(app, {persistence: browserLocalPersistence})
 
-export const auth = getAuth();
 export const login = async (email, password) => {
     try {
         const { user } = await signInWithEmailAndPassword(auth, email, password)

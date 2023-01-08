@@ -5,7 +5,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20%;
 }
 .form-layout .container {
   flex-direction: row;
@@ -28,10 +27,15 @@
   background-blend-mode: multiply;
   background-color: rgba(0, 0, 0, 0.55);
 }
-.form-section .logo {
-  position: absolute;
-  top: 10%;
+.form-section .login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  height: 100%;
+}
+.form-section .logo {
   text-align: center;
   font-size: 18px;
 }
@@ -42,11 +46,21 @@
 .form-section .login {
   height: 350px;
 }
+.form-section .login-title {
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 10px;
+  color: white !important;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--secondary-bg);
+  z-index: 5;
+}
 .form-section .register {
   height: auto;
 }
 .form-section .form {
-  margin-top: 10%;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   background: rgba(255, 255, 255, 0.5);
@@ -60,7 +74,9 @@
 }
 .form-section .form-title {
   text-decoration: none;
+  text-align: center;
   margin-bottom: 10px;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--secondary-bg);
   z-index: 5;
@@ -481,73 +497,6 @@
   }
   to {
     box-shadow: inset -3px 0px 0px transparent;
-  }
-}
-@media screen and (max-width: 1920px) {
-  .form-title {
-    font-size: 1.8rem;
-    font-weight: 600;
-  }
-  .form-layout {
-    margin-top: 10%;
-  }
-}
-@media screen and (max-width: 1600px) {
-  .form-title {
-    font-size: 1.6rem;
-    font-weight: 600;
-  }
-  .form-layout {
-    margin-top: 10%;
-  }
-}
-@media screen and (max-width: 1366px) {
-  .form-title {
-    font-size: 1rem;
-    font-weight: 600;
-  }
-  .form-layout {
-    margin-top: 11%;
-  }
-  .form-section .logo img {
-    height: 90px;
-    width: auto;
-  }
-}
-@media screen and (max-width: 1040px) {
-  .form-title {
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
-  .form-layout {
-    margin-top: 10%;
-  }
-  .form-section .logo img {
-    height: 90px;
-    width: auto;
-  }
-}
-@media screen and (max-width: 450px) {
-  .form-title {
-    font-size: 15px;
-    font-weight: 400;
-  }
-  .form-section .logo img {
-    height: 100px;
-    width: auto;
-  }
-}
-@media screen and (max-width: 395px) {
-  .form-title {
-    font-size: 12px;
-    font-weight: 400;
-  }
-  .form-section .logo img {
-    height: 60px;
-    width: auto;
-  }
-  .form-layout {
-    margin-top: 30%;
   }
 }
 * {
