@@ -47,7 +47,7 @@ function FormRegister() {
 
                 <button disabled={(!email || !password) || (!name || !surname)} className={`form-sign-in`} type="submit">Kayıt Ol</button>
                 <div className="form-secondary-cta">
-                    <Link className="form-secondary-cta-text form-secondary-cta-text--need-help" to="/">Yardım ister misin?</Link>
+                    <Link className="form-secondary-cta-text form-secondary-cta-text--need-help" to="/">Giriş Yap</Link>
                 </div>
             </form>
         </div>

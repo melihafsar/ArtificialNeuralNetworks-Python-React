@@ -1,5 +1,5 @@
 import React from 'react'
-import Uploder from '../components/Uploder';
+import Uploader from '../components/Uploader';
 import SideBar from "../components/SideBar";
 
 function HomePage() {
@@ -8,7 +8,7 @@ function HomePage() {
       <SideBar />
       <section className="home-section">
         <div className="text">Obje Tanıma Modeli</div>
-        <Uploder/>
+        <Uploader/>
       </section>
 
 

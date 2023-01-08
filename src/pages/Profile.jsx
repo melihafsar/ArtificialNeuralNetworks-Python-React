@@ -68,13 +68,15 @@ function Profile() {
             <label> Yeni Şifreniniz :
               <input
                 type="text"
-                style={{ width: "100%" }}
+                style={{ 
+                  width: "100%",
+                  height: "30px", fontSize: "20px", padding: "5px", margin: "5px", borderRadius: "5px", border: "1px solid #ccc" }}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </label>
             <br />
             <div className='form-button-container'>
-              <button className='form-button' type="submit">Güncelle</button>
+              <button className='form-button button-update' type="submit">Güncelle</button>
             </div>
           </form>
         </div>
