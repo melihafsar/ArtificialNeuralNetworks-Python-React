@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { login } from '../firebase/firebaseConfig';
 import { useAuth } from '../context/AuthContext';
-
 
 function FormLogin() {
   const [email, setEmail] = useState('');
@@ -42,8 +41,13 @@ function FormLogin() {
           <label className="form-group-label">Şifre</label>
         </div>
         <div className='container'>
-          <input type="checkbox" onClick={togglePassword} />
-          <h5>Şifreyi Göster</h5>
+          <div className='row'>
+            <input type="checkbox" onClick={togglePassword} />
+            <h5>Şifreyi Göster</h5>
+          </div>
+          <div className="form-secondary-cta">
+            <Link className="form-secondary-cta-text form-secondary-cta-text--need-help" to="/register">Kayıt Ol</Link>
+          </div>
         </div>
         <button className="form-sign-in" type="submit">Oturum Aç</button>
         <br />

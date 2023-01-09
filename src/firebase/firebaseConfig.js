@@ -96,5 +96,15 @@ export const updateNewPassword = async (user, newPassword) => {
       });
 }
 
+export const updateUser = async (data) => {
+       updateProfile(auth.currentUser,data)
+    .then(() => {
+        successAlert("Profiliniz başarıyla güncellendi.")
+
+    }).catch((error) => {
+        console.log(error.code);
+        errorAlert( "Profiliniz güncellenemedi. " + translateMessage(error.code));
+    });
+}
 
 export default app

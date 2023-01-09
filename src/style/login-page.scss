@@ -6,14 +6,25 @@
     align-items: center;
 
     .container {
+        display: flex;
         flex-direction: row;
-        margin-bottom: 5px;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 10px;
     }
 }
 
 .form-section {
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100vw;
