@@ -34,6 +34,7 @@ function Uploder() {
     setImageSource(`data:image/jpeg;base64, ${result.data.image}`)
   }
 
+
   return (
     <>
 
@@ -70,6 +71,11 @@ function Uploder() {
             <br />
             <input style={{color: "white", fontSize: "1em"}}type="file" name='photo' onChange={onInputChange} />
             <button type="submit" className='button-upload'>Yükle</button>
+            {/* {file &&
+              <button type="submit" className='button-download'>
+                <a href={file} style={{textDecoration: "none"}} download="file.jpeg">İndir</a>
+              </button>
+            } */}
           </form>
         </div>
       </div>
@@ -79,7 +85,3 @@ function Uploder() {
 }
 
 export default Uploder
-
-//<img className='picture' src={AfsarPhoto} alt="requestPicture" />
-
-//  <img className='picture' src={AfsarPhoto} alt="responsePicture" />

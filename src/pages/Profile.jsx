@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import SideBar from "../components/SideBar";
 import { useAuth } from '../context/AuthContext';
 import userImage from '../static/user.png';
-import { logout, auth, updateNewPassword } from '../firebase/firebaseConfig';
+import { logout, auth, updateNewPassword, updateUser } from '../firebase/firebaseConfig';
 import { useNavigate } from "react-router-dom";
 
 function Profile() {
@@ -10,6 +10,7 @@ function Profile() {
   const currentUser = auth.currentUser;
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const [avatar, setAvatar] = useState(currentUser.providerData[0].photoURL || '');
 
   async function handleLogOut() {
     await logout();
@@ -21,8 +22,9 @@ function Profile() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setPassword("");
     updateNewPassword(currentUser, password);
+    updateUser({photoURL : avatar});
+    setPassword("");
     handleLogOut();
   }
 
@@ -48,7 +50,7 @@ function Profile() {
         <div className="profile-div">
           <div className='profile-image-div'>
             <div className="profile-image">
-              <img src={userImage} alt="user" />
+              {avatar ? <img src={avatar} style={{maxWidth:"150px", borderRadius: "999px" }} alt="user" /> : <img src={userImage} alt="user" />}
             </div>
           </div>
 
@@ -75,6 +77,16 @@ function Profile() {
               />
             </label>
             <br />
+            <label> Yeni Profil Resminiz İçin URL:
+              <input
+                type="text"
+                style={{ 
+                  width: "100%",
+                  height: "30px", fontSize: "20px", padding: "5px", margin: "5px", borderRadius: "5px", border: "1px solid #ccc" }}
+                onChange={(e) => setAvatar(e.target.value)}
+                value={avatar}
+              />
+            </label>
             <div className='form-button-container'>
               <button className='form-button button-update' type="submit">Güncelle</button>
             </div>
