@@ -13,12 +13,6 @@ from firebase_admin.auth import verify_id_token
 import firebase_admin
 from firebase_admin import credentials
 
-origins = [
-    "http://localhost",
-    "http://localhost:8080",
-    "http://localhost:3000",
-]
-
 yolov7_detector = yolov7("models/best.onnx",
                          conf_thres=0.5,
                          iou_thres=0.5)
@@ -36,7 +30,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
