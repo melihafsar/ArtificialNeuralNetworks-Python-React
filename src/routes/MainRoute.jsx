@@ -8,6 +8,7 @@ import PrivateRoute from './PrivateRoute';
 import RootRoute from './RootRoute';
 import Contacts from '../pages/Contacts';
 import RegisterPage from '../pages/RegisterPage';
+import Test from '../pages/Test';
 
 function MainRoute() {
     return (
@@ -19,6 +20,7 @@ function MainRoute() {
                 <Route path='/homepage' element={<PrivateRoute><HomePage/></PrivateRoute>} />
                 <Route path='/contacts' element={<PrivateRoute><Contacts/></PrivateRoute>} />
                 <Route path='/profile' element={<PrivateRoute><Profile/></PrivateRoute>} />
+                <Route path='/admin/test' element={<PrivateRoute><Test/></PrivateRoute>}/>
                 <Route path='*' element={<Page404 />} />
             </Routes>
         </>

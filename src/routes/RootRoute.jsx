@@ -1,7 +1,7 @@
 import { useAuth } from "../context/AuthContext";
 import { Navigate } from "react-router-dom";
 
-function RootRoute({children}) {
+function RootRoute() {
     const { user, isInitialized } = useAuth();
 
     if (!isInitialized) {

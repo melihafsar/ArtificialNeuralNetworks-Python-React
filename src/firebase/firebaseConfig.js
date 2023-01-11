@@ -22,11 +22,11 @@ const firebaseConfig = {
     messagingSenderId: "829135674083",
     appId: "1:829135674083:web:a5aee14ac91dfd409d03d6",
     measurementId: "G-DEVPLTNJZ1"
-  };
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = initializeAuth(app, {persistence: browserLocalPersistence})
+export const auth = initializeAuth(app, { persistence: browserLocalPersistence })
 
 export const login = async (email, password) => {
     try {
@@ -44,14 +44,14 @@ export const login = async (email, password) => {
 export const register = async (email, password, name, surname) => {
     try {
         const { user } = await createUserWithEmailAndPassword(auth, email, password);
-            updateProfile(auth.currentUser, {
-                displayName: `${name} ${surname}`
-            }).then(() => {
-                successAlert("Profil kaydı başarıyla oluşturuldu.")
-            }).catch((error) => {
-                warningAlert("Giriş bilgileriniz kaydedildi. Ancak isim soyisim bilginiz kaydedilemedi.");
-            });
-            return user;
+        updateProfile(auth.currentUser, {
+            displayName: `${name} ${surname}`
+        }).then(() => {
+            successAlert("Profil kaydı başarıyla oluşturuldu.")
+        }).catch((error) => {
+            warningAlert("Giriş bilgileriniz kaydedildi. Ancak isim soyisim bilginiz kaydedilemedi.");
+        });
+        return user;
     } catch (error) {
         console.log(error.code);
         errorAlert(translateMessage(error.code));
@@ -79,8 +79,9 @@ export const logout = async () => {
 export const getUserInfo = () => {
     const user = auth.currentUser;
     if (user !== null) {
-      user.providerData.forEach((profile) => {
-        return profile.email;})
+        user.providerData.forEach((profile) => {
+            return profile.email;
+        })
     }
     else {
         return null;
@@ -90,21 +91,21 @@ export const getUserInfo = () => {
 export const updateNewPassword = async (user, newPassword) => {
     updatePassword(user, newPassword).then(() => {
         successAlert("Şifreniz başarıyla güncellendi.");
-      }).catch((error) => {
+    }).catch((error) => {
         console.log(error.code);
-        errorAlert( "Şifreniz güncellenemedi. " + translateMessage(error.code));
-      });
+        errorAlert("Şifreniz güncellenemedi. " + translateMessage(error.code));
+    });
 }
 
 export const updateUser = async (data) => {
-       updateProfile(auth.currentUser,data)
-    .then(() => {
-        successAlert("Profiliniz başarıyla güncellendi.")
+    updateProfile(auth.currentUser, data)
+        .then(() => {
+            successAlert("Profiliniz başarıyla güncellendi.")
 
-    }).catch((error) => {
-        console.log(error.code);
-        errorAlert( "Profiliniz güncellenemedi. " + translateMessage(error.code));
-    });
+        }).catch((error) => {
+            console.log(error.code);
+            errorAlert("Profiliniz güncellenemedi. " + translateMessage(error.code));
+        });
 }
 
 export default app
