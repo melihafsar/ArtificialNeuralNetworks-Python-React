@@ -6,7 +6,7 @@ import time
 import base64
 from pydantic import BaseModel, Field
 from io import BytesIO
-from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.cors import CORSMiddleware
 from yolov7 import yolov7
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from firebase_admin.auth import verify_id_token
@@ -36,7 +36,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-bearer_scheme = HTTPBearer(scheme_name="Firebase", description="Navigate to /token to get your token")
+bearer_scheme = HTTPBearer(scheme_name="Firebase", description="Navigate to /admin/token in application to get your token")
 
 class Error(BaseModel):
     message: Optional[str]
