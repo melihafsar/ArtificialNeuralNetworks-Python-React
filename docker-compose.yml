@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   backend:
-    image: aesaganda/ysa-backend:v2.0
+    image: aesaganda/ysa-backend:v2.2
     container_name: api
     restart: unless-stopped
     environment:
