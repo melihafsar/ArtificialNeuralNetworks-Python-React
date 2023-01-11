@@ -13,7 +13,7 @@ services:
       - ysa_network
 
   frontend:
-    image: aesaganda/ysa-frontend:v1.0
+    image: aesaganda/ysa-frontend:v2.0
     container_name: frontend
     restart: unless-stopped
     ports:
