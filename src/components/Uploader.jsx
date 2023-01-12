@@ -24,7 +24,7 @@ function Uploder() {
 
     const token = await getAuth().currentUser.getIdToken()
 
-    var result = await axios.post("http://localhost:8000/detect", {
+    var result = await axios.post("https://api.marun.tk/detect", {
       image: base64,
     }, {
       headers: {
