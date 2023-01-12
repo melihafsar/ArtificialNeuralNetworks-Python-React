@@ -1,23 +1,23 @@
 version: '3.7'
 services:
   backend:
-    image: aesaganda/ysa-backend:v2.2
+    image: aesaganda/ysa-backend:v2.3
     container_name: api
     restart: unless-stopped
     environment:
       - TZ=Europe/Istanbul
     ports:
-      - 8000:8000
+      - 8010:8000
 
     networks:
       - ysa_network
 
   frontend:
-    image: aesaganda/ysa-frontend:v2.0
+    image: aesaganda/ysa-frontend:v2.1
     container_name: frontend
     restart: unless-stopped
     ports:
-      - 3000:3000
+      - 3010:3000
 
     environment:
       - TZ=Europe/Istanbul
