@@ -20,8 +20,80 @@
     background-color: rgb(17, 16, 28);
     border-radius: 5px;
     padding: 1% 0%;
-    
-    .picture-box{
+
+    //!
+    input[type="file"] {
+        display: none;
+    }
+
+    .custom-file-upload {
+        border: 1px solid #ccc;
+        border-radius: 999px;
+        color: aliceblue;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin: 2%;
+    }
+
+    form {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #66688d;
+        background-color: rgb(17, 16, 28);
+        border-radius: 5px;
+        margin: 1% 2.5%;
+
+        .button-upload {
+            background: white;
+            color: #09095d;
+            border-radius: 999px;
+            box-shadow: #4d4d96 0 5px 10px -5px;
+            box-sizing: border-box;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 20px;
+            opacity: 1;
+            outline: 0 solid transparent;
+            padding: 5px 15px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            width: fit-content;
+            word-break: break-word;
+            border: 0;
+            margin: 1%;
+        }
+
+        .button-download {
+            background: white;
+            color: #09095d;
+            border-radius: 999px;
+            box-shadow: #4d4d96 0 5px 10px -5px;
+            box-sizing: border-box;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 20px;
+            opacity: 1;
+            outline: 0 solid transparent;
+            padding: 5px 15px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            width: fit-content;
+            word-break: break-word;
+            border: 0;
+            margin: 1%;
+        }
+    }
+
+    .picture-box {
         //background-color: rgb(111, 15, 15);
         max-width: 40%;
         max-height: 40%;
@@ -59,4 +131,3 @@
 
     }
 }
-

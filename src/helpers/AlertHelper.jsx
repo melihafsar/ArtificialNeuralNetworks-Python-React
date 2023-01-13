@@ -13,7 +13,7 @@ export const successAlert = (message) => toast.success(message, {
 
 export const errorAlert = (message) => toast.error(message, {
     position: "top-right",
-    autoClose: 3000,
+    autoClose: 4000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -33,3 +33,16 @@ export const warningAlert = (message) =>
     progress: undefined,
     theme: 'dark'
   });
+
+export const infoAlert = (message) => {
+  toast.warn(message, {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+    });
+}

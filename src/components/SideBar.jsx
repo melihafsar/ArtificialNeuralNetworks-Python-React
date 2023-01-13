@@ -6,7 +6,7 @@ import logo from '../static/TeknolojiF.png';
 import { useEffect } from 'react';
 
 const sideBarInfo = [
-    { link: "/homepage", i_className: "bx bx-grid-alt", categoryName: "Planlama" },
+    { link: "/homepage", i_className: "bx bx-grid-alt", categoryName: "Obje Tanıma Modeli" },
     { link: "/contacts", i_className: "bx bx-envelope", categoryName: "İletişim" },
     { link: "/profile", i_className: "bx bx-cog", categoryName: "Kullanıcı Ayarları" },
     { link: "https://takvim.marmara.edu.tr/", i_className: "bx bx-calendar", categoryName: "Akademik Takvim" },
@@ -15,19 +15,18 @@ const sideBarInfo = [
 
 function SideBar() {
     const [sideBar, setSideBar] = useState(true);
-    const {setUser, setUserInfo, userInfo} = useAuth();
+    const { setUser, setUserInfo, userInfo } = useAuth();
 
     const getUserInfo = () => {
         const user = auth.currentUser;
         if (user !== null) {
             setUserInfo(user.providerData[0]);
         }
-      }
+    }
 
     useEffect(() => {
         getUserInfo();
-    }, [])
-
+    }, []);
 
     const navigate = useNavigate();
 

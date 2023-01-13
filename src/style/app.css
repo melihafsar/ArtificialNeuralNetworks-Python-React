@@ -531,8 +531,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 320px;
-  height: 320px;
+  width: 290px;
+  height: 290px;
   transform: translate(-50%, -50%);
   border-radius: 16px;
   overflow: hidden;
@@ -686,6 +686,72 @@
   border-radius: 5px;
   padding: 1% 0%;
 }
+.picture-container input[type=file] {
+  display: none;
+}
+.picture-container .custom-file-upload {
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  color: aliceblue;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 2%;
+}
+.picture-container form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #66688d;
+  background-color: rgb(17, 16, 28);
+  border-radius: 5px;
+  margin: 1% 2.5%;
+}
+.picture-container form .button-upload {
+  background: white;
+  color: #09095d;
+  border-radius: 999px;
+  box-shadow: #4d4d96 0 5px 10px -5px;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 5px 15px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  margin: 1%;
+}
+.picture-container form .button-download {
+  background: white;
+  color: #09095d;
+  border-radius: 999px;
+  box-shadow: #4d4d96 0 5px 10px -5px;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 5px 15px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  margin: 1%;
+}
 .picture-container .picture-box {
   max-width: 40%;
   max-height: 40%;
@@ -719,66 +785,16 @@
   border-radius: 5px;
 }
 
-.button-update {
-  background: #09095d;
-  border-radius: 999px;
-  box-shadow: #4d4d96 0 5px 10px -5px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 24px;
-  opacity: 1;
-  outline: 0 solid transparent;
-  padding: 8px 18px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: fit-content;
-  word-break: break-word;
-  border: 0;
-}
-
-.button-upload {
-  background: white;
-  color: #09095d;
-  border-radius: 999px;
-  box-shadow: #4d4d96 0 5px 10px -5px;
-  box-sizing: border-box;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 20px;
-  opacity: 1;
-  outline: 0 solid transparent;
-  padding: 5px 15px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: fit-content;
-  word-break: break-word;
-  border: 0;
-}
-
-.button-download {
-  text-decoration: none;
-  margin: 10px;
-  background: white;
-  color: #09095d;
-  border-radius: 999px;
-  box-shadow: #4d4d96 0 5px 10px -5px;
-  box-sizing: border-box;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 20px;
-  opacity: 1;
-  outline: 0 solid transparent;
-  padding: 5px 15px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: fit-content;
-  word-break: break-word;
-  border: 0;
+@media screen and (max-width: 600px) {
+  h3 {
+    font-size: 0.8rem;
+  }
+  .button-upload {
+    font-size: 1.1rem;
+  }
+  .button-download {
+    font-size: 0.8rem;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -9,65 +9,16 @@
 
 
 
-.button-update {
-  background: #09095d;
-  border-radius: 999px;
-  box-shadow: #4d4d96 0 5px 10px -5px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 24px;
-  opacity: 1;
-  outline: 0 solid transparent;
-  padding: 8px 18px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: fit-content;
-  word-break: break-word;
-  border: 0;
-}
-
-.button-upload {
-  background: white;
-  color: #09095d;
-  border-radius: 999px;
-  box-shadow: #4d4d96 0 5px 10px -5px;
-  box-sizing: border-box;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 20px;
-  opacity: 1;
-  outline: 0 solid transparent;
-  padding: 5px 15px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: fit-content;
-  word-break: break-word;
-  border: 0;
-}
+@media screen and (max-width: 600px) {
+  h3 {
+    font-size: .8rem;
+  } 
+  .button-upload {
+    font-size: 1.1rem;
+  }
+  .button-download {
+    font-size: .8rem;
+  }
 
 
-.button-download {
-  text-decoration: none;
-  margin : 10px;
-  background: white;
-  color: #09095d;
-  border-radius: 999px;
-  box-shadow: #4d4d96 0 5px 10px -5px;
-  box-sizing: border-box;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 20px;
-  opacity: 1;
-  outline: 0 solid transparent;
-  padding: 5px 15px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: fit-content;
-  word-break: break-word;
-  border: 0;
 }
