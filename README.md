@@ -5,4 +5,4 @@ You can reach the demo at https://ysa-frontend-react.pages.dev/ \
 **frontend address (docker)**: https://demo.marun.tk \
 **web3 gateway** (going extramile): https://web3.marun.tk \
 **IPFS native address**: ipfs://QmcTnLhToZmNFpEjiDYzgQXaCMfyB6cHjQsJ6eDLXvwJGi \
-**CF-IPNS** https://k51qzi5uqu5dknxqh8c2fjkcfhi0au8coigqmy5yhb32675zaawobozroyzbke.ipns.cf-ipfs.com/login
+**CF-IPNS** https://cf-ipfs.com/ipfs/QmcTnLhToZmNFpEjiDYzgQXaCMfyB6cHjQsJ6eDLXvwJGi
